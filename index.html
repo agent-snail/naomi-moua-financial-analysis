@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Naomi Moua Financial Analysis Project">
+  <title>Naomi Moua | Financial Analysis</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" data-page="home">Naomi Moua<span>Financial Analysis</span></a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav id="nav" aria-label="Main navigation">
+        <a href="#home" data-page="home">Home</a>
+        <a href="#about" data-page="about">About</a>
+        <a href="#analysis" data-page="analysis">Financial Analysis</a>
+        <a href="#contact" data-page="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">FINANCIAL ANALYSIS PROJECT</p>
+            <h1>Financial decisions made <span>clearer.</span></h1>
+            <p class="hero-text">
+              Welcome to Naomi Moua's financial analysis website. This project uses
+              financial formulas to evaluate investment performance, return, risk, and
+              risk-adjusted performance.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#analysis" data-page="analysis">Open Financial Analysis</a>
+              <a class="btn secondary" href="#about" data-page="about">Learn About the Project</a>
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="chart-icon">↗</div>
+            <h2>What can be calculated?</h2>
+            <ul>
+              <li>Holding-Period Return</li>
+              <li>Annualized Return</li>
+              <li>Volatility / Standard Deviation</li>
+              <li>Sharpe Ratio</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="container section">
+        <div class="section-heading">
+          <p class="eyebrow">PROJECT OVERVIEW</p>
+          <h2>A practical financial calculator</h2>
+          <p>
+            Enter your own financial information in the Financial Analysis section.
+            The website calculates the selected measure instantly and displays the
+            formula used so the result can be checked.
+          </p>
+        </div>
+        <div class="cards four">
+          <article class="info-card"><div class="card-number">01</div><h3>Return</h3><p>Measure how much an investment gained or lost over a holding period.</p></article>
+          <article class="info-card"><div class="card-number">02</div><h3>Annualized Return</h3><p>Convert a multi-year holding-period return into an annual rate.</p></article>
+          <article class="info-card"><div class="card-number">03</div><h3>Volatility</h3><p>Measure the variability of a series of periodic investment returns.</p></article>
+          <article class="info-card"><div class="card-number">04</div><h3>Sharpe Ratio</h3><p>Compare excess return with the volatility taken to earn it.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="page">
+      <div class="page-banner">
+        <div class="container">
+          <p class="eyebrow">ABOUT</p>
+          <h1>About the Project</h1>
+          <p>Financial Analysis Website — Naomi Moua</p>
+        </div>
+      </div>
+      <div class="container section narrow">
+        <div class="about-box">
+          <div class="avatar">NM</div>
+          <div>
+            <p class="eyebrow">STUDENT</p>
+            <h2>Naomi Moua</h2>
+            <p>
+              This website was created as a financial analysis project to demonstrate
+              how financial calculations can be performed using an interactive web
+              application.
+            </p>
+          </div>
+        </div>
+
+        <h2>Project Purpose</h2>
+        <p>
+          The purpose of this project is to apply financial concepts to practical
+          calculations. Users can enter values and receive calculated measures for
+          investment return and risk. Each calculator includes its mathematical
+          formula and a brief explanation of what the result means.
+        </p>
+
+        <h2>Use of AI</h2>
+        <p>
+          AI tools were used to assist with website planning, HTML/CSS/JavaScript
+          development, troubleshooting, and improvement. The financial formulas were
+          implemented explicitly in the JavaScript so the calculations can be reviewed
+          and tested.
+        </p>
+
+        <div class="notice">
+          <strong>Academic project note:</strong>
+          This website is designed for educational financial analysis. It is not
+          financial advice or a recommendation to buy or sell any investment.
+        </div>
+      </div>
+    </section>
+
+    <!-- ANALYSIS -->
+    <section id="analysis" class="page">
+      <div class="page-banner">
+        <div class="container">
+          <p class="eyebrow">FINANCIAL ANALYSIS</p>
+          <h1>Financial Calculators</h1>
+          <p>Enter your information below to calculate financial measures.</p>
+        </div>
+      </div>
+
+      <div class="container section">
+        <div class="calculator-grid">
+
+          <article class="calculator">
+            <div class="calc-header">
+              <span class="calc-tag">RETURN</span>
+              <h2>Holding-Period Return</h2>
+              <p>Measures the total return earned during an investment holding period.</p>
+            </div>
+            <div class="fields">
+              <label>Beginning Price ($)
+                <input id="hpr-begin" type="number" step="0.01" min="0" placeholder="100">
+              </label>
+              <label>Ending Price ($)
+                <input id="hpr-end" type="number" step="0.01" placeholder="115">
+              </label>
+              <label>Dividends / Income ($)
+                <input id="hpr-div" type="number" step="0.01" value="0" placeholder="2">
+              </label>
+            </div>
+            <button class="btn primary full" id="hpr-btn">Calculate HPR</button>
+            <div class="result" id="hpr-result" aria-live="polite">Enter values and calculate.</div>
+            <div class="formula">
+              <strong>Formula:</strong> HPR = (Ending Price − Beginning Price + Dividends) ÷ Beginning Price
+            </div>
+          </article>
+
+          <article class="calculator">
+            <div class="calc-header">
+              <span class="calc-tag">RETURN</span>
+              <h2>Annualized Return</h2>
+              <p>Converts a holding-period return into an equivalent annual return.</p>
+            </div>
+            <div class="fields">
+              <label>Holding-Period Return (%)
+                <input id="ann-hpr" type="number" step="0.01" placeholder="17">
+              </label>
+              <label>Holding Period (Years)
+                <input id="ann-years" type="number" step="0.01" min="0.01" placeholder="2">
+              </label>
+            </div>
+            <button class="btn primary full" id="ann-btn">Calculate Annualized Return</button>
+            <div class="result" id="ann-result" aria-live="polite">Enter values and calculate.</div>
+            <div class="formula">
+              <strong>Formula:</strong> Annualized Return = (1 + HPR)<sup>1 / Years</sup> − 1
+            </div>
+          </article>
+
+          <article class="calculator">
+            <div class="calc-header">
+              <span class="calc-tag">RISK</span>
+              <h2>Volatility</h2>
+              <p>Calculates the sample standard deviation of periodic returns.</p>
+            </div>
+            <div class="fields">
+              <label>Periodic Returns (%)
+                <textarea id="vol-returns" rows="4" placeholder="5, 2, -3, 4, 1"></textarea>
+              </label>
+              <label class="checkbox-label">
+                <input id="vol-annualize" type="checkbox">
+                Annualize monthly/periodic volatility
+              </label>
+            </div>
+            <button class="btn primary full" id="vol-btn">Calculate Volatility</button>
+            <div class="result" id="vol-result" aria-live="polite">Enter comma-separated returns and calculate.</div>
+            <div class="formula">
+              <strong>Formula:</strong> Sample SD = √[Σ(x − x̄)² ÷ (n − 1)]
+            </div>
+          </article>
+
+          <article class="calculator">
+            <div class="calc-header">
+              <span class="calc-tag">RISK-ADJUSTED</span>
+              <h2>Sharpe Ratio</h2>
+              <p>Measures excess return per unit of volatility.</p>
+            </div>
+            <div class="fields">
+              <label>Portfolio Return (%)
+                <input id="sh-return" type="number" step="0.01" placeholder="12">
+              </label>
+              <label>Risk-Free Rate (%)
+                <input id="sh-rf" type="number" step="0.01" placeholder="4">
+              </label>
+              <label>Portfolio Volatility (%)
+                <input id="sh-vol" type="number" step="0.01" min="0.0001" placeholder="10">
+              </label>
+            </div>
+            <button class="btn primary full" id="sh-btn">Calculate Sharpe Ratio</button>
+            <div class="result" id="sh-result" aria-live="polite">Enter values and calculate.</div>
+            <div class="formula">
+              <strong>Formula:</strong> Sharpe Ratio = (Portfolio Return − Risk-Free Rate) ÷ Volatility
+            </div>
+          </article>
+        </div>
+
+        <div class="testing">
+          <h2>Calculation Check Examples</h2>
+          <p>These examples can be used to test whether the calculators are functioning correctly.</p>
+          <div class="test-grid">
+            <div><strong>HPR</strong><span>$100 → $115 + $2 dividend = <b>17.00%</b></span></div>
+            <div><strong>Annualized</strong><span>17% over 2 years = approximately <b>8.20%</b></span></div>
+            <div><strong>Volatility</strong><span>5%, 2%, −3%, 4%, 1% = approximately <b>3.03%</b></span></div>
+            <div><strong>Sharpe</strong><span>12% return, 4% RF, 10% volatility = <b>0.80</b></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="page">
+      <div class="page-banner">
+        <div class="container">
+          <p class="eyebrow">CONTACT</p>
+          <h1>Contact</h1>
+          <p>Basic project contact information.</p>
+        </div>
+      </div>
+      <div class="container section narrow">
+        <div class="contact-card">
+          <div class="contact-icon">✉</div>
+          <h2>Naomi Moua</h2>
+          <p>
+            For questions about this financial analysis project, please use the
+            contact information provided by the student for the course.
+          </p>
+          <div class="contact-row">
+            <span>Student</span>
+            <strong>Naomi Moua</strong>
+          </div>
+          <div class="contact-row">
+            <span>Project</span>
+            <strong>Financial Analysis Website</strong>
+          </div>
+          <p class="small">Add your school email here before submitting if your instructor requires an email address.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <span>© 2026 Naomi Moua</span>
+      <span>Financial Analysis Project</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
